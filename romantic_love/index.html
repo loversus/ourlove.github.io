@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Happy Birthday & 6th Anniversary</title>
+
+  <!-- Fonts & CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- AUDIO (tetap hidup) -->
+  <audio id="bg-music"   src="assets/bg-music.mp3"   autoplay loop playsinline></audio>
+  <audio id="love-audio" src="assets/iloveyou2.mp3"></audio>
+  <audio id="click-audio"src="assets/click.mp3"></audio>
+
+  <!-- NAV -->
+  <nav>
+    <ul>
+        <span class="logo">RL</span>              <!-- ← simbol baru -->
+      <li><a href="#home"       data-target="home"       class="nav-link">Home</a></li>
+      <li><a href="#timeline"   data-target="timeline"   class="nav-link">Timeline</a></li>
+      <li><a href="#loveletter" data-target="loveletter" class="nav-link">Love&nbsp;Letter</a></li>
+    </ul>
+  </nav>
+
+  <!-- HOME -->
+  <section id="home" class="section hero active">
+    <div class="card">
+      <h1 class="wave-text hover-grow">
+        Happy Birthday &amp;&nbsp;<br>Happy Anniversary 6th Baby
+      </h1>
+
+      <p class="intro hover-grow">
+        To Love and To Be Loved, You Make Years Feel Like Days
+      </p>
+
+      <button id="btn-love" class="btn hover-grow">
+        Click to Love Me💖
+      </button>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section id="timeline" class="section hidden">
+    <div class="card">
+      <h2 class="sub-header hover-grow">Our&nbsp;Love&nbsp;Journey 💞</h2>
+
+      <div class="timeline">
+  <div class="tl-item left hover-grow">
+    <h3>June 20, 2019</h3>
+    <p>First chat on LINE. Just two strangers saying hi…📲</p>
+  </div>
+  <div class="tl-item right hover-grow">
+    <h3>July 18, 2019</h3>
+    <p>Getting closer day by day. More chats, more laughs💬</p>
+  </div>
+  <div class="tl-item left hover-grow">
+    <h3>September 1, 2019</h3>
+    <p>That feeling… Something more than just friends🥺💕</p>
+  </div>
+  <div class="tl-item right hover-grow">
+    <h3>December 20, 2019</h3>
+    <p>Things are getting serious — our hearts are choosing each other💞</p>
+  </div>
+  <div class="tl-item left hover-grow">
+    <h3>2020 – 2025</h3>
+    <p>Through distance and time, our bond grows stronger every year🤝</p>
+  </div>
+  <div class="tl-item right hover-grow">
+    <h3>2025</h3>
+    <p>6th anniversary — still us, still in love💖</p>
+  </div>
+    </div>
+  </div>
+</section> 
+
+
+  <section id="loveletter" class="section hidden">
+  <div class="envelope">
+    <div class="envelope-top"></div>
+    <div class="card loveletter-card">
+      <h1 class="sub-header hover-grow">Love Letter💌</h1>
+      <button id="reveal-letter" class="btn hover-grow">Open Me Up🌸</button>
+    </div>
+  </div>
+</section>
+
+
+  <!-- POPUP VIDEO -->
+  <div id="love-video-popup" class="modal hidden">
+    <div class="modal-content">
+      <video controls autoplay loop class="love-video">
+        <source src="assets/couple-love.mp4" type="video/mp4">
+        Browser‑mu tidak mendukung video.
+      </video>
+    </div>
+  </div>
+
+  <!-- POPUP LETTER -->
+  <div id="letter-popup" class="modal hidden">
+    <div class="modal-content letter-card">
+<pre>
+To my dearest love,  
+Even with thousands of miles between us,  
+you've never felt far.  
+Because every heartbeat of mine still echoes your name.
+
+We may not get to hold hands on bad days,  
+or share late-night talks face to face,  
+but your love reaches me louder than any voice.  
+Your patience, your effort, your heart—  
+they’ve built a home inside me.
+
+Thank you for choosing me, every day.  
+Here's to us—  
+To the memories we’ve made,  
+the promises we keep,  
+and the future we dream of… together.
+
+With all my love,  
+—Ur pwetty gf🤍
+
+</pre>
+      <audio controls src="assets/iloveyou2.mp3" class="audio-player"></audio>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

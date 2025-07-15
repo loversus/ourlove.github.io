@@ -1,0 +1,218 @@
+:root{
+  --pink:#F9D6D5;
+  --white:#FFFFFF;
+  --dark:#3A3A3A;
+  --red:#ff4c4c;
+}
+
+/* base */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Poppins',sans-serif;background:var(--pink);color:var(--dark);overflow-x:hidden;line-height:1.7;}
+h1,h2{font-family:'Great Vibes',cursive;color:var(--white);text-align:center;text-shadow:0 2px 6px rgba(0,0,0,.25);}
+a{color:var(--white);text-decoration:none;} ul{list-style:none;}
+
+/* ==== NAV kapsul kanan‑atas ==== */
+nav{
+  position:fixed;
+  top:12px;
+  right:18px;
+  padding:0.6rem 1.4rem;
+  background:rgba(249,214,213,.35);
+  backdrop-filter:blur(8px);
+  border-radius:40px;
+  box-shadow:0 4px 12px rgba(0,0,0,.08);
+  z-index:1000;
+}
+
+/* link horizontal */
+nav ul{display:flex;gap:1.3rem;font-weight:600;}
+
+/* ---------- Hover effect ---------- */
+nav ul li a{
+  position:relative;
+  display:inline-block;
+  transition:transform .3s ease;
+}
+
+/* garis bawah tersembunyi */
+nav ul li a::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:100%;
+  height:2px;
+  background:var(--white);
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .3s ease;
+  border-radius:1px;
+}
+
+/* saat cursor diarahkan */
+nav ul li a:hover{
+  transform:scale(1.2);              /* teks membesar */
+}
+nav ul li a:hover::after{
+  transform:scaleX(1);               /* garis bawah muncul */
+}
+
+/* ------------ Logo LR ------------- */
+nav .logo{
+  font-family:'Poppins',sans-serif;
+  font-weight:5000;
+  font-size:1rem;
+  letter-spacing:.05em;
+  color:var(--white);
+  border:1px solid var(--white);   /* capsule outline */
+  padding:0 0.6rem;
+  border-radius:500px;
+  user-select:none;
+}
+
+
+
+/* section + card */
+.section{min-height:100vh;display:flex;justify-content:center;align-items:center;padding:80px 1rem 40px;position:relative;}
+.section.hidden{display:none;}
+/* =======================================
+   CARD — putih transparan glassmorphism
+======================================= */
+.card {
+  background: rgba(230, 230, 255, 0.28); /* putih ±28 % opacity */
+  backdrop-filter: blur(10px);           /* efek kaca */
+  border-radius: 28px;
+  padding: 2.2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  max-width: 860px;
+  width: 100%;
+  text-align: center;
+}
+
+
+/* text & animasi */
+.wave-text{font-size:2.6rem;animation:wavy 5s ease-in-out infinite alternate;}
+@keyframes wavy{from{transform:translateX(-12px);}to{transform:translateX(12px);}}
+.intro{color:var(--white);margin:1rem 0;}
+.hover-grow{transition:transform .3s;} .hover-grow:hover{transform:scale(1.08);}
+
+/* button */
+.btn{margin-top:1.6rem;padding:.9rem 1.9rem;border:none;border-radius:28px;background:var(--white);color:var(--red);font-size:1rem;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.12);transition:transform .3s,background .3s,color .3s;}
+.btn.no-bg{background:transparent;box-shadow:none;color:var(--red);}
+/* =======================================
+   HOVER: semua tombol jadi merah
+======================================= */
+.btn:hover,
+.btn.no-bg:hover {
+  background: var(--red) !important;  /* merah */
+  color: var(--white) !important;     /* teks putih */
+  transform: translateY(-4px);        /* animasi mengangkat (opsional) */
+}
+
+/* === Amplop khusus sesi Love Letter === */
+.envelope {
+  position: relative;
+  max-width: 860px;
+  width: 100%;
+}
+
+.envelope-top {
+  width: 100%;
+  height: 0;
+  border-left: 430px solid transparent;
+  border-right: 430px solid transparent;
+  border-bottom: 120px solid rgba(255, 230, 255, 0.28); /* warna amplop */
+  margin: 0 auto;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.1));
+}
+
+/* === Amplop Love‑Letter ukuran sedang === */
+.envelope{
+  position:relative;
+  max-width:500px;    /* ↓ semula 860px */
+  width:100%;
+  margin:0 auto;      /* tetap di‑tengah */
+}
+
+.envelope-top{
+  width:100%;
+  height:0;
+  /* setengah dari max‑width → 250px + 250px = 500px */
+  border-left: 250px solid transparent;
+  border-right:250px solid transparent;
+  border-bottom:90px solid rgba(255,255,255,.28); /* tinggi penutup */
+  filter:drop-shadow(0 4px 10px rgba(0,0,0,.1));
+}
+
+.loveletter-card{
+  background:rgba(230,230,255,.28);
+  backdrop-filter:blur(10px);
+  border-radius:0 0 28px 28px;
+  padding:2rem;
+  box-shadow:0 8px 24px rgba(0,0,0,.12);
+  text-align:center;
+  color:var(--white);
+}
+
+
+@media (max-width: 700px) {
+  .modal-content.letter-card pre {
+    font-size: 0.88rem;
+  }
+}
+
+.modal-content.letter-card {
+  background: rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(12px);
+  border-radius: 24px;
+  padding: 1.6rem;
+  max-width: 520px;
+  width: 90%;
+  max-height: 85vh;
+  overflow-y: auto; /* scroll jika melebihi batas */
+  box-shadow: 0 8px 24px rgba(0,0,0,.18);
+  text-align: left;
+  animation: zoom 0.4s ease;
+}
+
+.modal-content.letter-card pre {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.90rem;       /* ↓ ukurannya dikecilkan */
+  line-height: 1.6;
+  color: var(--white);
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  margin-bottom: 1rem;
+}
+
+/* timeline */
+.sub-header{margin-bottom:1rem;}
+.timeline{position:relative;max-width:780px;margin:0 auto;}
+.timeline::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:4px;background:var(--white);transform:translateX(-50%);}
+.tl-item{position:relative;width:50%;padding:1.2rem 2rem;color:var(--white);}
+.tl-item.left{text-align:right;left:0;} .tl-item.right{left:50%;}
+.tl-item h3{margin-bottom:.3rem;color:var(--white);}
+.tl-item::before{content:'';position:absolute;top:18px;width:22px;height:22px;border-radius:50%;background:var(--white);border:4px solid var(--pink);}
+.tl-item.left::before{right:-14px;} .tl-item.right::before{left:-14px;}
+
+/* modal */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:flex;justify-content:center;align-items:center;z-index:2000;}
+.modal.hidden{display:none;}
+.modal-content{background:var(--white);border-radius:28px;padding:2rem;max-width:620px;width:90%;text-align:center;box-shadow:0 8px 24px rgba(0,0,0,.18);animation:zoom .4s ease;}
+@keyframes zoom{from{transform:scale(.5);opacity:0;}to{transform:scale(1);opacity:1;}}
+.love-video{width:100%;max-height:420px;border-radius:18px;box-shadow:0 6px 20px rgba(0,0,0,.25);}
+.letter-card pre{white-space:pre-wrap;line-height:1.8;color:var(--pink);font-size:1.05rem;margin-bottom:1.2rem;}
+.audio-player{width:100%;}
+
+/* hearts */
+.heart{position:absolute;bottom:-60px;color:var(--white);font-size:22px;opacity:.7;pointer-events:none;animation:float 6s linear infinite;}
+@keyframes float{0%{transform:translateY(0) scale(1);}100%{transform:translateY(-110vh) scale(1.8);opacity:0;}}
+
+/* responsive */
+@media(max-width:780px){
+  nav ul{display:none;}
+  .wave-text{font-size:1.9rem;}
+  .timeline::before{left:20px;}
+  .tl-item,.tl-item.left,.tl-item.right{width:100%;left:0;text-align:left;padding-left:4rem;}
+  .tl-item::before{left:12px;}
+}
